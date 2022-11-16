@@ -1,4 +1,5 @@
 use core::time;
+use semaphore::Semaphore;
 use std::sync::{Arc, Mutex};
 use std::{thread, vec};
 
@@ -51,13 +52,20 @@ fn main() {
         Filosofo::new("Filosofo 5".to_string(), 0, 4),
     ];
 
+    let tamanho_menos_um = filosofos.len() - 1;
+
+    let semaforo = Arc::new(Semaphore::new(tamanho_menos_um, ()));
+
     let passos: Vec<_> = filosofos
         .into_iter()
         .map(|f| {
             let mesa = mesa.clone();
+            let semaforo = semaforo.clone();
 
             thread::spawn(move || {
-                f.come(&mesa);
+                if semaforo.try_access().is_ok() {
+                    f.come(&mesa);
+                }
             })
         })
         .collect();
