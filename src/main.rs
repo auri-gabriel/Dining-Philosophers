@@ -62,9 +62,10 @@ fn main() {
             let mesa = mesa.clone();
             let semaforo = semaforo.clone();
 
-            thread::spawn(move || {
+            thread::spawn(move || loop {
                 if semaforo.try_access().is_ok() {
                     f.come(&mesa);
+                    break;
                 }
             })
         })
