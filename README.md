@@ -14,7 +14,12 @@ The solution to the Dining Philosophers problem implemented in this code uses `M
 
 ## Usage
 
-`cargo run`
+Run the project with the following command:
+
+
+```
+cargo run
+```
 
 ## Dependencies
 
