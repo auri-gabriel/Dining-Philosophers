@@ -1,12 +1,26 @@
+# Dining Philosophers
 
-# Trabalho 1 - Threads + Semáforos
+This is a simulation of the classic Dining Philosophers problem written in Rust programming language.
 
-Implemente um programa que utilize threads e faça uso de semáforos.
+## Problem Statement
 
-A noção de semáforos foi proposta por Dijkstra há muito tempo atrás.
+The Dining Philosophers problem is a classic computer science problem that illustrates the challenges of synchronizing access to shared resources in concurrent systems. In this problem, five philosophers are seated around a table with five forks. The philosophers alternate between thinking and eating, and they can only eat when they have both their left and right forks. The challenge is to ensure that no philosopher starves and that there are no deadlocks or race conditions.
 
-Neste trabalho é solicitado a implementação de um algoritmo que faça uso de semáforos.
+## Solution
 
-A linguagem e o tipo de problema ficam de livre escolha.
+The solution to the Dining Philosophers problem implemented in this code uses `Mutex` and `Semaphore` objects from the standard library to synchronize access to shared resources and prevent race conditions.
 
-Sugestões de problemas: vários produtores e consumidores, jantar dos filósofos, Pix (entrada e saída de saldo), RU com múltiplas filas (pessoas entram, pessoas vão se servir), controle de estoque, ...
+## Usage
+
+`cargo run`
+
+## Dependencies
+
+The program requires the following dependencies:
+
+- [semaphore](https://crates.io/crates/semaphore)
+- [core](https://doc.rust-lang.org/core/)
+
+## Contributing
+
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
