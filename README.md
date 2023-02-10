@@ -1,5 +1,7 @@
 # Dining Philosophers
 
+## **⚠️ Disclaimer: This project is for educational purposes only.**
+
 This is a simulation of the classic Dining Philosophers problem written in Rust programming language.
 
 ## Problem Statement
